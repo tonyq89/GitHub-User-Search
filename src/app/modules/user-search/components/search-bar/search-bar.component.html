@@ -1,0 +1,25 @@
+  <div class="row" [style.marginTop.px]="15">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <form>
+          <label for="searchText" [style.display]="'block'">Search More Than <span [style.fontWeight]="600">56M</span> users</label>
+          <div class="input-group mb-3">
+              <input type="text" 
+                      class="form-control" 
+                      placeholder="Search GitHub" 
+                      aria-label="Search GitHub" 
+                      aria-describedby="searchBar"
+                      [formControl]="searchInputControl">
+              <div class="input-group-append">
+                <button class="btn btn-outline-primary" 
+                        type="button"
+                        [disabled]="isButtonDisabled()" 
+                        (click)="search()">
+                        Search
+                </button>
+              </div>
+          </div>
+      </form>
+    </div>
+    <div class="col-md-2"></div>
+  </div>

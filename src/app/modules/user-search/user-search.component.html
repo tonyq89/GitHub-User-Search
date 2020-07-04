@@ -1,0 +1,26 @@
+<div class="container">
+<search-bar (searchInput)="searchInput($event)">
+
+</search-bar>
+
+<search-results-count [totalCount]="totalCount$ | async">
+    
+</search-results-count>
+
+<ng-container *ngIf="(totalCount$ | async) > 0">
+
+    <search-results [items]="userDetailItems$ | async"
+                    [totalCount]="totalCount$ | async">
+
+    </search-results>
+
+    <search-paging [pagingInfo]="pagingInfo$ | async"
+                (goToPage)="goToPage($event)">
+
+    </search-paging>
+
+</ng-container>
+
+<hr>
+
+</div>

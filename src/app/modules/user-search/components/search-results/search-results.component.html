@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Icon</th>
+                <th scope="col">Username</th>
+                <th scope="col">Bio</th>
+                <th scope="col">Followers</th>
+            </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngIf="totalCount > 0">
+                    <ng-container *ngFor="let i of items">
+                        <tr (click)="userSelected(i)">
+                            <td><img src="{{i.avatar_url}}" alt="userImage" width="70" height="70"></td>
+                            <th scope="row">{{i.login}}</th>
+                            <td>{{i.bio}}</td>
+                            <td>{{i.followers}}</td>
+                            
+                        </tr>
+                    </ng-container>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+
